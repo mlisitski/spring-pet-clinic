@@ -1,2 +1,2 @@
-# spring-pet-clinci
+# spring-pet-clinic
 Spring Boot Clinic
