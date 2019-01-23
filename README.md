@@ -1,2 +1,2 @@
 # spring-pet-clinic
-Spring Boot Clinic
+Spring Boot - Pet Clinic
