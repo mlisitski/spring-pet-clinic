@@ -11,6 +11,11 @@
 
     <artifactId>pet-clinic-data</artifactId>
 
+    <!-- Generate Lean Jar file - without extra dependencies -->
+    <properties>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+    </properties>
+
     <!-- DB -->
     <dependencies>
         <dependency>
@@ -47,21 +52,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
-                <!-- Generate Lean Jar file - without extra dependencies -->
-
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                        <configuration>
-                            <skip>
-                                true
-                            </skip>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
