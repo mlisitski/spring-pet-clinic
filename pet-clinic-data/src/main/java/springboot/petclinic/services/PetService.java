@@ -1,17 +1,13 @@
 package springboot.petclinic.services;
 
+import org.springframework.data.annotation.Id;
 import springboot.petclinic.model.Pet;
-
-import java.util.Set;
 
 /**
  * Created by max on 2019-03-07
  */
-public interface PetService {
+public interface PetService extends CrudService<Pet, Id> {
 
-    Pet findById(Long id);
 
-    Pet save(Pet pet);
 
-    Set<Pet> findAll();
 }

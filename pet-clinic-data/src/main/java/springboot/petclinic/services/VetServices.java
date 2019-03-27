@@ -1,18 +1,11 @@
 package springboot.petclinic.services;
 
+import org.springframework.data.annotation.Id;
 import springboot.petclinic.model.Vet;
-
-import java.util.Set;
 
 /**
  * Created by max on 2019-03-07
  */
-public interface VetServices {
-
-    Vet findById(Long id);
-
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
+public interface VetServices extends CrudService<Vet, Id> {
 
 }
