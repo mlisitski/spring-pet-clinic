@@ -6,8 +6,6 @@ import springboot.petclinic.model.Owner;
 import springboot.petclinic.model.Vet;
 import springboot.petclinic.services.OwnerService;
 import springboot.petclinic.services.VetService;
-import springboot.petclinic.services.map.OwnerServiceMap;
-import springboot.petclinic.services.map.VetServiceMap;
 
 /**
  * Created by max on 2019-04-01
@@ -18,10 +16,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
-
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
