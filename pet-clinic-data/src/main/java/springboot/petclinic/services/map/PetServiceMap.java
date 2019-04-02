@@ -1,14 +1,14 @@
 package springboot.petclinic.services.map;
 
 import springboot.petclinic.model.Pet;
-import springboot.petclinic.services.CrudService;
+import springboot.petclinic.services.PetService;
 
 import java.util.Set;
 
 /**
  * Created by max on 2019-03-26
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
@@ -30,6 +30,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
         super.delete(object);
 
     }
+
 
     @Override
     public void deleteById(Long id) {
