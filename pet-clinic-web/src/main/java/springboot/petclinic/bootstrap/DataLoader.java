@@ -13,6 +13,7 @@ import springboot.petclinic.services.VetService;
 @Component
 public class DataLoader implements CommandLineRunner {
 
+
     private final OwnerService ownerService;
     private final VetService vetService;
 
