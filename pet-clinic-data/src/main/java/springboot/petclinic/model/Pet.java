@@ -1,22 +1,33 @@
 package springboot.petclinic.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by max on 2019-02-25
  */
 public class Pet extends BaseEntity {
 
-    private PetType perType;
+
+    private String name;
+    private PetType petType;
     private Owner owner;
     private LocalDate birthDate;
 
-    public PetType getPerType() {
-        return perType;
+    public String getName() {
+        return name;
     }
 
-    public void setPerType(PetType perType) {
-        this.perType = perType;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public PetType getPetType() {
+        return petType;
+    }
+
+    public void setPetType(PetType petType) {
+        this.petType = petType;
     }
 
     public Owner getOwner() {
@@ -31,7 +42,9 @@ public class Pet extends BaseEntity {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(String birthDate) {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.birthDate = LocalDate.parse(birthDate, dtf);
     }
 }
