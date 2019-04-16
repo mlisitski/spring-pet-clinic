@@ -34,9 +34,7 @@ public class DataLoader implements CommandLineRunner {
         int count = petTypeService.findAll().size();
         if (count == 0) {
             loadData();
-
         }
-
     }
 
     private void loadData() {
@@ -67,7 +65,6 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
         System.out.println("Loaded owners in DataLoader class.");
 
-
         PetType dog = new PetType();
         dog.setName("Dog");
         petTypeService.save(dog);
@@ -90,7 +87,6 @@ public class DataLoader implements CommandLineRunner {
         pet2.setBirthDate("2017-10-10");
         owner2.getPets().add(pet2);
         System.out.println("Loaded pet types in DataLoader class.");
-
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Frank");
