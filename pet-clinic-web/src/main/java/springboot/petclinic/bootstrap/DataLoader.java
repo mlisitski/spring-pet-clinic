@@ -3,10 +3,9 @@ package springboot.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import springboot.petclinic.model.*;
-import springboot.petclinic.services.OwnerService;
-import springboot.petclinic.services.PetTypeService;
-import springboot.petclinic.services.SpecialityService;
-import springboot.petclinic.services.VetService;
+import springboot.petclinic.services.*;
+
+import java.time.LocalDate;
 
 /**
  * Created by max on 2019-04-01
@@ -19,13 +18,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialityService specialityService) {
+                      SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -101,6 +102,13 @@ public class DataLoader implements CommandLineRunner {
         vet2.getSpecialities().add(specialty2);
         vet2.getSpecialities().add(specialty3);
         vetService.save(vet2);
+
+        Visit visit1 = new Visit();
+        visit1.setPet(pet1);
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("Sneeze dog");
+        visitService.save(visit1);
+
 
         System.out.println("Loaded vets in DataLoader class.");
     }
