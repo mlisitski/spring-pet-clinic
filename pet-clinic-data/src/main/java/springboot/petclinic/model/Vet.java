@@ -1,5 +1,7 @@
 package springboot.petclinic.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,6 +9,8 @@ import java.util.Set;
 /**
  * Created by max on 2019-02-25
  */
+
+@Data
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
@@ -20,7 +24,4 @@ public class Vet extends Person {
         return specialties;
     }
 
-    public void setSpecialties(Set<Speciality> specialties) {
-        this.specialties = specialties;
-    }
 }
