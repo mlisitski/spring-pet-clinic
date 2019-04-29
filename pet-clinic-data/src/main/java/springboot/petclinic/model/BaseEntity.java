@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 
 @Data
+
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 

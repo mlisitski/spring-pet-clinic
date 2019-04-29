@@ -9,7 +9,6 @@ import javax.persistence.Table;
  * Created by max on 2019-02-25
  */
 
-
 @Data
 @Entity
 @Table(name = "types")

@@ -11,6 +11,7 @@ import java.util.Set;
 /**
  * Created by max on 2019-02-25
  */
+
 @Data
 @EqualsAndHashCode(exclude = "visits")
 @Entity
