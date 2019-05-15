@@ -1,5 +1,8 @@
 <!doctype html>
 <html th:fragment="layout (template, menu)">
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 <head>
 
@@ -51,14 +54,19 @@
                     <span>Home</span>
                 </li>
 
+                <li th:replace="::menuItem ('/owners/find','owners','find owners','search','Find owners')">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <span>Find owners</span>
+                </li>
+
                 <li th:replace="::menuItem ('/vets/','vets','veterinarians','plus-sign','Veterinarians')">
                     <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                     <span>Veterinarians</span>
                 </li>
 
-                <li th:replace="::menuItem ('/owners/','owners','owners','th-list','Owners')">
-                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                    <span>Owners</span>
+                <li th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','Error')">
+                    <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                    <span>Error</span>
                 </li>
 
             </ul>
@@ -83,9 +91,6 @@
     </div>
 </div>
 
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 
