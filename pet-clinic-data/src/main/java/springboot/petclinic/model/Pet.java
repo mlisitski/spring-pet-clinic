@@ -26,6 +26,7 @@ public class Pet extends BaseEntity {
     @Column(name = "birth_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
+
     @ManyToOne
     @JoinColumn(name = "type_id")
     private PetType petType;
